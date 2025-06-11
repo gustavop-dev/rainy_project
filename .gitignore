@@ -37,6 +37,9 @@ backend/media/
 backend/products/
 media/
 products/
+!frontend/src/components/products/
+!frontend/src/components/products/**
+
 
 # Django static files
 backend/staticfiles/
