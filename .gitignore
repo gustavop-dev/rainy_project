@@ -41,11 +41,6 @@ products/
 !frontend/src/components/products/**
 
 
-# Django static files
-backend/staticfiles/
-backend/static/
-staticfiles/
-
 # Environment variables
 .env
 .env.local
