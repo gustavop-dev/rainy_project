@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('rainyadmin/', admin_site.urls),  # Custom admin
     path('api/', include('website.urls')),
+    path('', include('website.urls')),  # Incluir las URLs de website en la raíz
 ]
 
 # Serve media files in development

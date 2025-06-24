@@ -1,0 +1,45 @@
+{% load static %}
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta name="google-site-verification" content="" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Rainy Colombia - Filtros de agua lluvia para cosecha de agua de techo. Sistemas de filtración dual intensity para recolección de agua de lluvia en Colombia." />
+    <meta name="keywords" content="filtros agua lluvia, cosecha agua lluvia, rainwater harvesting, filtros rainy, agua de techo Colombia" />
+    <meta name="author" content="Rainy Colombia" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Rainy Colombia - Filtros de Agua de Lluvia" />
+    <meta property="og:description" content="Sistemas de filtración dual intensity para cosecha de agua de lluvia. Filtros autolimpiantes sin energía externa." />
+    <meta property="og:image" content="{% static 'frontend/assets/Rainy_Filter_Logo.webp' %}" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Rainy Colombia - Filtros de Agua de Lluvia" />
+    <meta property="twitter:description" content="Sistemas de filtración dual intensity para cosecha de agua de lluvia. Filtros autolimpiantes sin energía externa." />
+    <meta property="twitter:image" content="{% static 'frontend/assets/Rainy_Filter_Logo.webp' %}" />
+    
+    <title>Rainy Colombia - Filtros de Agua de Lluvia | Sistemas de Cosecha de Agua de Techo</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="{% static 'frontend/assets/Rainy_Filter_Logo.webp' %}" />
+    <link rel="apple-touch-icon" href="{% static 'frontend/assets/Rainy_Filter_Logo.webp' %}" />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="{% static 'frontend/assets/Ubuntu-Regular.ttf' %}" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="{% static 'frontend/assets/Ubuntu-Bold.ttf' %}" as="font" type="font/ttf" crossorigin />
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" crossorigin href="{% static 'frontend/css/index.css' %}">
+    
+    <!-- JavaScript -->
+    <script type="module" crossorigin src="{% static 'frontend/js/index.js' %}"></script>
+    
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>
