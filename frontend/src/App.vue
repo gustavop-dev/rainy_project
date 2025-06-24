@@ -14,7 +14,7 @@
   <!-- Floating WhatsApp button with neon glow effect -->
   <a
     v-if="!loading && !showPreloader"
-    href="https://wa.me/573238122373"
+    href="https://wa.me/573103036539"
     target="_blank"
     rel="noopener noreferrer"
     class="fixed z-50 bottom-4 right-4 w-12 h-12 rounded-full bg-green-500 

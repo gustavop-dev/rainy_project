@@ -13,8 +13,14 @@
     <div class="py-16 bg-white rounded-lg">
       <!-- Section title -->
       <h2 class="max-w-7xl mx-auto mb-12 px-3 text-center font-light text-4xl text-black lg:text-6xl lg:px-0">
-        Características de los filtros Rainy FL
+        Características generales de los filtros RAINY FL
       </h2>
+      <p class="text-lg font-regular mb-4 px-10">
+        Todos los modelos Rainy FL comparten un diseño eficiente, duradero y libre de mantenimiento. Están pensados para facilitar la recolección de agua lluvia sin complicaciones técnicas, repuestos ni energía eléctrica.
+      </p>
+      <p class="text-lg font-regular mb-4 px-10">
+        Instala, filtra y reutiliza, así de simple.
+      </p>
       
       <!-- Marquee carousel for features -->
       <Vue3Marquee :pause-on-hover="true">
@@ -64,34 +70,44 @@ import {
  */
 const features = [
   { 
+    icon: CogIcon, 
+    title: 'Fácil instalación –', 
+    description: 'Compatible con cualquier bajante existente o nueva. Gracias a su unión giratoria de 360°, se adapta fácilmente a cualquier espacio.' 
+  },
+  { 
     icon: CheckCircleIcon, 
-    title: 'Alta Capacidad y Rendimiento –', 
-    description: ' Diseñados para filtrar grandes volúmenes de agua, ideales para propiedades con alta demanda.' 
-  },
-  { 
-    icon: LightBulbIcon, 
-    title: 'Eficientes y Ecológicos –', 
-    description: ' Reduce tu impacto ambiental y ahorra en agua embotellada.' 
-  },
-  { 
-    icon: ShieldCheckIcon, 
-    title: 'Resistentes y Duraderos –', 
-    description: ' Diseñados para filtrar grandes volúmenes de agua, ideales para propiedades con alta demanda.' 
+    title: 'Sistema de autolimpieza –', 
+    description: 'Evita taponamientos y acumulación de residuos. El agua circula libremente sin retorno ni obstrucciones.' 
   },
   { 
     icon: CogIcon, 
-    title: 'Fácil Mantenimiento y Larga Vida Útil –', 
-    description: ' Diseñados para funcionar con mínimas intervenciones técnicas.' 
+    title: 'Sistema mecánico –', 
+    description: 'Opera por gravedad. No tiene partes móviles ni requiere energía externa.' 
   },
   { 
     icon: UserCircleIcon, 
-    title: 'Agua Segura para Toda tu Propiedad –', 
-    description: ' Desde agua potable en la cocina hasta agua para riego y uso doméstico.' 
+    title: 'Múltiples aplicaciones –', 
+    description: 'Ideal para colegios, casas, industrias, edificios, fincas y campamentos de obra.' 
   },
   { 
     icon: LockClosedIcon, 
-    title: 'Filtración Personalizada para Cada Necesidad –', 
-    description: ' Sistemas adaptados a diferentes fuentes de agua, desde pozos profundos hasta redes municipales.' 
+    title: 'Cero costos de mantenimiento –', 
+    description: 'No requiere combustibles ni repuestos. Una solución de largo plazo, sin gastos recurrentes.' 
+  },
+  { 
+    icon: LightBulbIcon, 
+    title: 'Impacto sostenible –', 
+    description: 'Reduce el consumo de agua potable. Aprovecha un recurso natural sin contaminar.' 
+  },
+  { 
+    icon: ArrowTrendingUpIcon, 
+    title: 'Alta eficiencia –', 
+    description: 'Filtra grandes volúmenes de agua lluvia en segundos. Optimiza la recolección incluso en lluvias intensas.' 
+  },
+  { 
+    icon: ShieldCheckIcon, 
+    title: 'Materiales resistentes –', 
+    description: 'Filtro en acero inoxidable y cuerpo en HDPE estabilizado UV. Resiste corrosión, sol e intemperie por más de 20 años.' 
   }
 ]
 </script>

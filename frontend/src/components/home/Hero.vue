@@ -22,10 +22,10 @@
                 playsinline
             ></video>
             
-            <!-- Hero text overlay positioned at bottom -->
-            <div class="absolute w-full bottom-0 left-0 py-10 px-10 z-10">
-                <h1 class="text-white text-6xl font-light w-1/2">
-                    Agua Pura, Vida Pura – Filtra, Bebe, Disfruta
+            <!-- Hero text overlay positioned at bottom - Now responsive -->
+            <div class="absolute w-full bottom-0 left-0 py-6 px-4 sm:py-8 sm:px-6 md:py-10 md:px-10 z-10">
+                <h1 class="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light w-full sm:w-3/4 md:w-2/3 lg:w-1/2">
+                    Rainy®: el sistema que convierte la lluvia en agua lista para reutilizar
                 </h1>
             </div>
         </div>
@@ -42,5 +42,6 @@
  * - Auto-playing, looping video
  * - Overlay text with brand message
  * - Responsive design with mobile optimization (playsinline)
+ * - Responsive typography and spacing for all screen sizes
  */
 </script>
