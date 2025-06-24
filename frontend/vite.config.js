@@ -15,14 +15,27 @@ import { fileURLToPath, URL } from 'url'
 // Vite configuration object
 // https://vite.dev/config/
 export default defineConfig({
-  // Development server configuration
-  server: {
-    // Proxy API requests to Django backend during development
-    proxy: {
-      '/api': {
-        target: 'http://127.0.0.1:8000/', // Django development server URL
-        changeOrigin: true, // Change origin to match target
-        secure: false, // Allow insecure connections for development
+  // Esto hace que tus assets se referencien con /static/frontend/ al inicio
+  base: '/static/frontend/',
+  
+  // Build configuration for production
+  build: {
+    // Coloca los archivos generados físicamente en ../backend/static/frontend
+    // (ojo: es una ruta relativa a donde está tu vite.config.js)
+    outDir: '../backend/static/frontend',
+    rollupOptions: {
+      output: {
+        assetFileNames: (assetInfo) => {
+          if (/\.(png|jpg|jpeg|gif|svg)$/.test(assetInfo.name)) {
+            return 'img/[name][extname]';
+          }
+          if (/\.css$/.test(assetInfo.name)) {
+            return 'css/[name][extname]';
+          }
+          return 'assets/[name][extname]';
+        },
+        entryFileNames: 'js/[name].js',
+        chunkFileNames: 'js/[name].js',
       },
     },
   },
