@@ -19,7 +19,7 @@
         <p class="text-gray-700 leading-relaxed text-sm sm:text-base">
           Los datos personales aquí recolectados serán tratados por <strong>HASTILE S.A.S.</strong>, en calidad de responsable del tratamiento, con el fin de contactarlo, brindarle asesoría relacionada con nuestros servicios, y enviarle información comercial sobre nuestros productos. Usted puede ejercer sus derechos a conocer, actualizar, rectificar y suprimir sus datos, y revocar la autorización otorgada, mediante los canales dispuestos por la empresa. Consulte nuestra 
           <a 
-            href="/documents/privacy_policy/Politica_de_Tratamiento_HASTILE_SAS - mayo 2025.pdf" 
+            href="@/assets/documents/privacy_policy/Politica_de_Tratamiento_HASTILE_SAS - mayo 2025.pdf" 
             target="_blank" 
             rel="noopener noreferrer"
             class="text-blue-600 hover:text-blue-800 underline transition-colors duration-200"
