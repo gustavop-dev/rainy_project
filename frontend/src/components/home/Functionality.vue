@@ -79,19 +79,11 @@
         </div>
       </div>
 
-      <!-- Potabilization note - Below the entire section -->
-      <div class="mt-16 max-w-4xl mx-auto">
-        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
-          <h4 class="text-lg font-semibold text-black mb-3">
-            NOTA SOBRE POTABILIZACIÓN:
-          </h4>
-          <div class="flex items-start space-x-3">
-            <span class="text-yellow-600 text-xl mt-1">⚠️</span>
-            <p class="text-base font-regular text-gray-700 leading-relaxed">
-              El agua lluvia filtrada no es apta para consumo humano directo. Si deseas potabilizar el agua lluvia, también contamos con sistemas complementarios para ese fin.
-            </p>
-          </div>
-        </div>
+      <!-- Texto informativo - Responsive -->
+      <div class="mt-6 sm:mt-8 text-left">
+        <p class="text-xs sm:text-sm font-regular text-gray-500 leading-relaxed">
+          *El agua lluvia filtrada no es apta para consumo humano directo. Si deseas potabilizar el agua lluvia, también contamos con sistemas complementarios para ese fin.
+        </p>
       </div>
     </div>
   </section>

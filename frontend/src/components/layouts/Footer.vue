@@ -3,7 +3,7 @@
     <!-- Imagen de fondo -->
     <div class="absolute inset-0 overflow-hidden">
       <img 
-        src="@/assets/layouts/images/water.jpg" 
+        src="@/assets/layouts/images/water.avif" 
         alt="Techos - Fondo del footer"
         class="absolute top-0 left-0 w-full h-full object-cover"
       />
@@ -25,7 +25,7 @@
               Rainy
             </h1>
             <p class="text-xl lg:text-2xl font-regular text-white max-w-2xl">
-              Soluciones para filtrar y aprovechar el agua lluvia de forma eficiente.
+              Soluciones para filtrar y aprovechar el agua lluvia <br>de forma eficiente.
             </p>
           </div>
           

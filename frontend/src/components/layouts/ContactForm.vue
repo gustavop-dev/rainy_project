@@ -2,8 +2,8 @@
   <section class="py-12 sm:py-14 md:py-16 px-3 sm:px-4">
     <div>
       <!-- Título principal - Responsive -->
-      <div class="mb-8 sm:mb-10 md:mb-12">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-light text-black mb-3 sm:mb-4">
+      <div class="text-left grid grid-cols-1 lg:grid-cols-2 items-start lg:items-end gap-6 lg:gap-8 mb-8 sm:mb-10 md:mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-light text-black mb-3 sm:mb-4 lg:mb-4">
           ¿Tienes dudas o quieres más información?
         </h2>
         <p class="text-base sm:text-lg font-regular text-black leading-relaxed">

@@ -17,7 +17,7 @@
     href="https://wa.me/573103036539"
     target="_blank"
     rel="noopener noreferrer"
-    class="fixed z-50 bottom-4 right-4 w-12 h-12 rounded-full bg-green-500 
+    class="fixed z-50 bottom-12 right-4 w-12 h-12 rounded-full bg-green-500 
           flex items-center justify-center 
           shadow-[0_0_15px_4px_rgba(34,197,94,0.6)]
           cursor-pointer transition-transform hover:scale-110"

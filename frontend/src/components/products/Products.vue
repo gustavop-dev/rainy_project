@@ -4,7 +4,7 @@
       <!-- Encabezado de la sección - Responsive -->
       <div class="text-left grid grid-cols-1 lg:grid-cols-2 items-start lg:items-end gap-6 lg:gap-8 mb-8 sm:mb-10 md:mb-12">
         <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-4 lg:mb-4">
-          Filtros para agua lluvia Rainy®: <span class="underline decoration-2 md:decoration-3 underline-offset-4">eficientes, duraderos y sin complicaciones</span>
+          Filtros para agua lluvia Rainy: <span class="underline decoration-2 md:decoration-3 underline-offset-4">eficientes, duraderos y sin complicaciones</span>
         </h1>
         <p class="text-base sm:text-lg font-regular leading-relaxed">
           Sin consumibles. Sin mantenimientos. Sin atascamientos.
@@ -30,7 +30,7 @@
       </div>
 
       <!-- Grid de productos - Responsive -->
-      <div v-else class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-5 md:gap-6">
+      <div v-else class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-5 md:gap-6">
         <div 
           v-for="product in displayProducts" 
           :key="product.id"
@@ -55,20 +55,18 @@
 
             <!-- Contenido de la tarjeta -->
             <div class="p-4 sm:p-5 md:p-6">
-              <!-- Etiqueta de categoría -->
-              <p class="text-gray-500 font-regular text-xs sm:text-sm mb-2">
-                {{ product.initial_text }}
-              </p>
-
               <!-- Nombre del producto -->
               <h2 class="text-2xl sm:text-3xl font-regular text-gray-800 mb-3">
                 {{ product.title }}
               </h2>
 
-              <!-- Descripción -->
-              <p class="text-gray-600 font-regular text-sm sm:text-md mb-4 leading-relaxed line-clamp-3">
-                {{ product.description }}
-              </p>
+              <!-- Especificación técnica principal -->
+              <div v-if="product.specifications && product.specifications.length > 0" class="flex items-center mb-4">
+                <div class="w-2 h-2 sm:w-3 sm:h-3 bg-blue-500 rounded-full mr-2"></div>
+                <span class="text-gray-700 font-regular text-xs sm:text-sm">
+                  {{ product.specifications[14].name }}: {{ product.specifications[14].value }}{{ product.specifications[14].unit ? ` ${product.specifications[14].unit}` : '' }}
+                </span>
+              </div>
 
               <!-- Especificación técnica principal -->
               <div v-if="product.specifications && product.specifications.length > 0" class="flex items-center mb-4">
@@ -139,7 +137,7 @@
       <!-- Texto informativo - Responsive -->
       <div class="mt-6 sm:mt-8 text-left">
         <p class="text-xs sm:text-sm font-regular text-gray-500 leading-relaxed">
-          *Los valores indicados en cada uno de los recuadros corresponden a los precios de venta al público para el año 2025. Los precios publicados no incluyen IVA. A cada valor se le deberá adicionar el 19% correspondiente al Impuesto al Valor Agregado (IVA), conforme a la legislación vigente en Colombia.
+          *Precios de venta al público 2025. No incluyen IVA (19%).
         </p>
       </div>
     </div>

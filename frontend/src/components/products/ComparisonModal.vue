@@ -19,13 +19,13 @@
       
       <!-- Contenido del modal - Tabla de comparación responsive -->
       <div class="p-3 sm:p-4 md:p-6">
-        <div class="overflow-x-auto">
-          <table class="min-w-full divide-y divide-gray-200">
+        <div class="overflow-x-auto max-h-[60vh] overflow-y-auto border border-gray-200 rounded-lg relative">
+          <table class="min-w-full divide-y divide-gray-200 relative">
             <!-- Header de la tabla -->
-            <thead class="bg-gray-50">
+            <thead class="bg-gray-50 sticky top-0 z-20">
               <tr>
                 <!-- Primera columna - Sticky solo en tablets+ -->
-                <th scope="col" class="px-3 sm:px-4 md:px-6 py-3 sm:py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider md:sticky md:left-0 md:bg-gray-50 md:z-10">
+                <th scope="col" class="px-3 sm:px-4 md:px-6 py-3 sm:py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider md:sticky md:left-0 md:bg-gray-50 md:z-30">
                   Característica
                 </th>
                 <th 
@@ -60,36 +60,6 @@
             
             <!-- Cuerpo de la tabla -->
             <tbody class="bg-white divide-y divide-gray-200">
-              <!-- Fila de precios -->
-              <tr class="bg-blue-50 hover:bg-blue-100 transition-colors duration-200">
-                <td class="px-3 sm:px-4 md:px-6 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm font-medium text-gray-900 md:sticky md:left-0 md:bg-blue-50 md:z-10">
-                  Precio
-                </td>
-                <td 
-                  v-for="product in sortedProducts" 
-                  :key="`price-${product.id}`"
-                  class="px-3 sm:px-4 md:px-6 py-3 sm:py-4 text-center text-xs sm:text-sm font-semibold text-green-600"
-                >
-                  <div class="leading-tight">
-                    $ {{ parseFloat(product.price).toLocaleString('es-CO') }} COP
-                  </div>
-                </td>
-              </tr>
-              
-              <!-- Fila de descripción -->
-              <tr class="hover:bg-gray-50 transition-colors duration-200">
-                <td class="px-3 sm:px-4 md:px-6 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm font-medium text-gray-900 md:sticky md:left-0 md:bg-white md:z-10">
-                  Descripción
-                </td>
-                <td 
-                  v-for="product in sortedProducts" 
-                  :key="`description-${product.id}`"
-                  class="px-3 sm:px-4 md:px-6 py-3 sm:py-4 text-xs sm:text-sm text-gray-700 max-w-[140px] sm:max-w-[160px] md:max-w-xs"
-                >
-                  <div class="text-left leading-tight">{{ product.description }}</div>
-                </td>
-              </tr>
-              
               <!-- Filas de especificaciones -->
               <tr 
                 v-for="(specName, index) in allSpecificationNames" 
@@ -112,15 +82,6 @@
               </tr>
             </tbody>
           </table>
-        </div>
-
-        <!-- Información adicional - Responsive -->
-        <div class="mt-4 sm:mt-6 p-3 sm:p-4 bg-blue-50 rounded-lg">
-          <h4 class="text-xs sm:text-sm font-medium text-blue-900 mb-2">Información importante</h4>
-          <p class="text-xs sm:text-sm text-blue-800 leading-relaxed">
-            *Los valores mostrados corresponden a los precios de venta al público para el año 2025. 
-            Los precios no incluyen IVA (19% adicional según legislación colombiana).
-          </p>
         </div>
 
         <!-- Indicador de scroll en móviles -->

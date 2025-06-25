@@ -10,15 +10,15 @@
 <template>
   <section class="p-3">
     <!-- Main container with white background -->
-    <div class="py-16 bg-white rounded-lg">
+    <div class="pt-16 pb-8 bg-white rounded-lg">
       <!-- Section title -->
       <h2 class="max-w-7xl mx-auto mb-12 px-3 text-center font-light text-4xl text-black lg:text-6xl lg:px-0">
-        Características generales de los filtros RAINY FL
+        Características generales de los filtros <span class="whitespace-nowrap">RAINY FL</span>
       </h2>
       <p class="text-lg font-regular mb-4 px-10">
         Todos los modelos Rainy FL comparten un diseño eficiente, duradero y libre de mantenimiento. Están pensados para facilitar la recolección de agua lluvia sin complicaciones técnicas, repuestos ni energía eléctrica.
       </p>
-      <p class="text-lg font-regular mb-4 px-10">
+      <p class="text-lg font-regular mb-12 px-10">
         Instala, filtra y reutiliza, así de simple.
       </p>
       
@@ -71,42 +71,42 @@ import {
 const features = [
   { 
     icon: CogIcon, 
-    title: 'Fácil instalación –', 
+    title: 'Fácil instalación', 
     description: 'Compatible con cualquier bajante existente o nueva. Gracias a su unión giratoria de 360°, se adapta fácilmente a cualquier espacio.' 
   },
   { 
     icon: CheckCircleIcon, 
-    title: 'Sistema de autolimpieza –', 
+    title: 'Sistema de autolimpieza', 
     description: 'Evita taponamientos y acumulación de residuos. El agua circula libremente sin retorno ni obstrucciones.' 
   },
   { 
     icon: CogIcon, 
-    title: 'Sistema mecánico –', 
+    title: 'Sistema mecánico', 
     description: 'Opera por gravedad. No tiene partes móviles ni requiere energía externa.' 
   },
   { 
     icon: UserCircleIcon, 
-    title: 'Múltiples aplicaciones –', 
+    title: 'Múltiples aplicaciones', 
     description: 'Ideal para colegios, casas, industrias, edificios, fincas y campamentos de obra.' 
   },
   { 
     icon: LockClosedIcon, 
-    title: 'Cero costos de mantenimiento –', 
+    title: 'Cero costos de mantenimiento', 
     description: 'No requiere combustibles ni repuestos. Una solución de largo plazo, sin gastos recurrentes.' 
   },
   { 
     icon: LightBulbIcon, 
-    title: 'Impacto sostenible –', 
+    title: 'Impacto sostenible', 
     description: 'Reduce el consumo de agua potable. Aprovecha un recurso natural sin contaminar.' 
   },
   { 
     icon: ArrowTrendingUpIcon, 
-    title: 'Alta eficiencia –', 
+    title: 'Alta eficiencia', 
     description: 'Filtra grandes volúmenes de agua lluvia en segundos. Optimiza la recolección incluso en lluvias intensas.' 
   },
   { 
     icon: ShieldCheckIcon, 
-    title: 'Materiales resistentes –', 
+    title: 'Materiales resistentes', 
     description: 'Filtro en acero inoxidable y cuerpo en HDPE estabilizado UV. Resiste corrosión, sol e intemperie por más de 20 años.' 
   }
 ]

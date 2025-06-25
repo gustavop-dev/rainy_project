@@ -27,7 +27,7 @@
                   Especificación
                 </th>
                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Valor
+                  Detalle
                 </th>
               </tr>
             </thead>
@@ -41,7 +41,7 @@
                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                   {{ specification.label }}
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
+                <td class="px-6 py-4 text-sm text-gray-700 break-words">
                   {{ specification.value }}
                 </td>
               </tr>
@@ -49,11 +49,7 @@
           </table>
         </div>
 
-        <!-- Información adicional si existe -->
-        <div v-if="additionalInfo" class="mt-6 p-4 bg-blue-50 rounded-lg">
-          <h4 class="text-sm font-medium text-blue-900 mb-2">Información adicional</h4>
-          <p class="text-sm text-blue-800">{{ additionalInfo }}</p>
-        </div>
+
       </div>
       
       <!-- Footer del modal -->
