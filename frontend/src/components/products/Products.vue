@@ -64,7 +64,7 @@
               <div v-if="product.specifications && product.specifications.length > 0" class="flex items-center mb-4">
                 <div class="w-2 h-2 sm:w-3 sm:h-3 bg-blue-500 rounded-full mr-2"></div>
                 <span class="text-gray-700 font-regular text-xs sm:text-sm">
-                  {{ product.specifications[0].name }}: {{ product.specifications[0].value }}{{ product.specifications[0].unit ? ` ${product.specifications[0].unit}` : '' }}
+                  {{ product.specifications[0].name }}: {{ product.specifications[0].value }}
                 </span>
               </div>
 
@@ -72,7 +72,7 @@
               <div v-if="product.specifications && product.specifications.length > 0" class="flex items-center mb-4">
                 <div class="w-2 h-2 sm:w-3 sm:h-3 bg-blue-500 rounded-full mr-2"></div>
                 <span class="text-gray-700 font-regular text-xs sm:text-sm">
-                  {{ product.specifications[5].name }}: {{ product.specifications[5].value }}{{ product.specifications[5].unit ? ` ${product.specifications[5].unit}` : '' }}
+                  {{ product.specifications[5].name }}: {{ product.specifications[5].value }}
                 </span>
               </div>
 
