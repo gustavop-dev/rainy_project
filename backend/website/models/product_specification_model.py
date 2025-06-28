@@ -29,7 +29,10 @@ class ProductSpecification(models.Model):
         verbose_name_plural = "Especificaciones de Productos"
         # Ensure a product cannot have the same specification type listed multiple times
         unique_together = ('product', 'specification_type')
-        ordering = ['product', 'specification_type__name'] 
+        # Ordenar por producto y por el ID del tipo de especificación para mantener
+        # el mismo orden en que fueron creadas las especificaciones (que coincide
+        # con el orden de la tabla solicitada por el cliente).
+        ordering = ['product', 'specification_type__id'] 
 
     def __str__(self):
         return f"{self.product.title} - {self.specification_type.name}: {self.value}" 

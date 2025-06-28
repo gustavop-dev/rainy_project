@@ -44,90 +44,126 @@ class Command(BaseCommand):
         # Product data based on the specifications table
         products_data = [
             {
-                'title': 'Rainy FL 80',
+                'title': 'Rainy FL-80',
                 'price': Decimal('450000.00'),
                 'initial_text': 'Filtro de lluvia ideal para techos de hasta 120 m²',
                 'description': 'El Rainy FL 80 es perfecto para casas medianas y pequeñas. Su diseño compacto permite una instalación sencilla mientras mantiene la máxima eficiencia en la filtración de agua de lluvia.',
                 'order': 1,
-                'specs': {
-                    'Área máxima de la cubierta': '120',
-                    'Caudal máximo': '120',
-                    'Tamaño de la entrada': '90',
-                    'Tamaño salida de agua limpia': '63',
-                    'Tamaño salida de desagüe': '90',
-                }
+                'specs': [
+                    ('Área máxima de la cubierta', '120 m2'),
+                    ('Máxima Intensidad de la lluvia', '75 mm/h'),
+                    ('Tipo de filtro', 'Abierto por un extremo, con diseño antiobstrucción'),
+                    ('Principio de trabajo', 'Fuerza Cohesiva y Centrífuga'),
+                    ('Presión operacional', '30,48 cm de columna de agua (0,060 kg/cm2)'),
+                    ('Caudal máximo', '120 L/min'),
+                    ('Elemento filtrante', 'Malla de superficies múltiples en acero inoxidable SS-304 - grado alimenticio'),
+                    ('Tamaño de la malla filtrante', '250 micras (0,25 mm)'),
+                    ('Tamaño de la entrada', '90 mm'),
+                    ('Tamaño salida de agua limpia', '63 mm'),
+                    ('Tamaño salida de desagüe', '90 mm'),
+                    ('Material cuerpo del filtro', 'Polietileno de alta densidad (HDPE), estabilizado contra rayos ultravioleta (UV), resistente a la corrosión y a la intemperie.'),
+                    ('Eficiencia del filtro', 'Por encima del 90%'),
+                    ('Fuente de poder', 'Gravedad'),
+                    ('Limpieza', 'Autolimpieza mediante descarga automática'),
+                ]
             },
             {
-                'title': 'Rainy FL 150',
+                'title': 'Rainy FL-150',
                 'price': Decimal('550000.00'),
                 'initial_text': 'Filtro de lluvia para techos de hasta 180 m²',
                 'description': 'El Rainy FL 150 ofrece mayor capacidad de filtración para casas grandes y pequeñas edificaciones comerciales. Equilibrio perfecto entre eficiencia y capacidad.',
                 'order': 2,
-                'specs': {
-                    'Área máxima de la cubierta': '180',
-                    'Caudal máximo': '180',
-                    'Tamaño de la entrada': '90',
-                    'Tamaño salida de agua limpia': '75',
-                    'Tamaño salida de desagüe': '90',
-                }
+                'specs': [
+                    ('Área máxima de la cubierta', '180 m2'),
+                    ('Máxima Intensidad de la lluvia', '75 mm/h'),
+                    ('Tipo de filtro', 'Abierto por un extremo, con diseño antiobstrucción'),
+                    ('Principio de trabajo', 'Fuerza Cohesiva y Centrífuga'),
+                    ('Presión operacional', '30,48 cm de columna de agua (0,060 kg/cm2)'),
+                    ('Caudal máximo', '180 L/min'),
+                    ('Elemento filtrante', 'Malla de superficies múltiples en acero inoxidable SS-304 - grado alimenticio'),
+                    ('Tamaño de la malla filtrante', '250 micras (0,25 mm)'),
+                    ('Tamaño de la entrada', '90 mm'),
+                    ('Tamaño salida de agua limpia', '75 mm'),
+                    ('Tamaño salida de desagüe', '90 mm'),
+                    ('Material cuerpo del filtro', 'Polietileno de alta densidad (HDPE), estabilizado contra rayos ultravioleta (UV), resistente a la corrosión y a la intemperie.'),
+                    ('Eficiencia del filtro', 'Por encima del 90%'),
+                    ('Fuente de poder', 'Gravedad'),
+                    ('Limpieza', 'Autolimpieza mediante descarga automática'),
+                ]
             },
             {
-                'title': 'Rainy FL 250',
+                'title': 'Rainy FL-250',
                 'price': Decimal('750000.00'),
                 'initial_text': 'Filtro de lluvia de alta capacidad para techos de hasta 250 m²',
                 'description': 'El Rainy FL 250 está diseñado para edificaciones comerciales y residenciales de gran tamaño. Máxima eficiencia para grandes volúmenes de agua.',
                 'order': 3,
-                'specs': {
-                    'Área máxima de la cubierta': '250',
-                    'Caudal máximo': '250',
-                    'Tamaño de la entrada': '110',
-                    'Tamaño salida de agua limpia': '90',
-                    'Tamaño salida de desagüe': '90',
-                }
+                'specs': [
+                    ('Área máxima de la cubierta', '250 m2'),
+                    ('Máxima Intensidad de la lluvia', '75 mm/h'),
+                    ('Tipo de filtro', 'Abierto por un extremo, con diseño antiobstrucción'),
+                    ('Principio de trabajo', 'Fuerza Cohesiva y Centrífuga'),
+                    ('Presión operacional', '30,48 cm de columna de agua (0,060 kg/cm2)'),
+                    ('Caudal máximo', '250 L/min'),
+                    ('Elemento filtrante', 'Malla de superficies múltiples en acero inoxidable SS-304 - grado alimenticio'),
+                    ('Tamaño de la malla filtrante', '250 micras (0,25 mm)'),
+                    ('Tamaño de la entrada', '110 mm'),
+                    ('Tamaño salida de agua limpia', '90 mm'),
+                    ('Tamaño salida de desagüe', '90 mm'),
+                    ('Material cuerpo del filtro', 'Polietileno de alta densidad (HDPE), estabilizado contra rayos ultravioleta (UV), resistente a la corrosión y a la intemperie.'),
+                    ('Eficiencia del filtro', 'Por encima del 90%'),
+                    ('Fuente de poder', 'Gravedad'),
+                    ('Limpieza', 'Autolimpieza mediante descarga automática'),
+                ]
             },
             {
-                'title': 'Rainy FL 350',
+                'title': 'Rainy FL-350',
                 'price': Decimal('950000.00'),
                 'initial_text': 'Filtro de lluvia industrial para techos de hasta 375 m²',
                 'description': 'El Rainy FL 350 es la solución ideal para aplicaciones industriales y comerciales de gran escala. Diseñado para manejar grandes volúmenes con máxima eficiencia.',
                 'order': 4,
-                'specs': {
-                    'Área máxima de la cubierta': '375',
-                    'Caudal máximo': '360',
-                    'Tamaño de la entrada': '110',
-                    'Tamaño salida de agua limpia': '110',
-                    'Tamaño salida de desagüe': '90',
-                }
+                'specs': [
+                    ('Área máxima de la cubierta', '375 m2'),
+                    ('Máxima Intensidad de la lluvia', '75 mm/h'),
+                    ('Tipo de filtro', 'Abierto por un extremo, con diseño antiobstrucción'),
+                    ('Principio de trabajo', 'Fuerza Cohesiva y Centrífuga'),
+                    ('Presión operacional', '30,48 cm de columna de agua (0,060 kg/cm2)'),
+                    ('Caudal máximo', '360 L/min'),
+                    ('Elemento filtrante', 'Malla de superficies múltiples en acero inoxidable SS-304 - grado alimenticio'),
+                    ('Tamaño de la malla filtrante', '250 micras (0,25 mm)'),
+                    ('Tamaño de la entrada', '110 mm'),
+                    ('Tamaño salida de agua limpia', '110 mm'),
+                    ('Tamaño salida de desagüe', '90 mm'),
+                    ('Material cuerpo del filtro', 'Polietileno de alta densidad (HDPE), estabilizado contra rayos ultravioleta (UV), resistente a la corrosión y a la intemperie.'),
+                    ('Eficiencia del filtro', 'Por encima del 90%'),
+                    ('Fuente de poder', 'Gravedad'),
+                    ('Limpieza', 'Autolimpieza mediante descarga automática'),
+                ]
             },
             {
-                'title': 'Rainy FL 500',
+                'title': 'Rainy FL-500',
                 'price': Decimal('1200000.00'),
                 'initial_text': 'Filtro de lluvia de máxima capacidad para techos de hasta 500 m²',
                 'description': 'El Rainy FL 500 representa la máxima capacidad de nuestra línea de filtros. Ideal para grandes complejos industriales y comerciales que requieren el más alto rendimiento.',
                 'order': 5,
-                'specs': {
-                    'Área máxima de la cubierta': '500',
-                    'Caudal máximo': '480',
-                    'Tamaño de la entrada': '110',
-                    'Tamaño salida de agua limpia': '110',
-                    'Tamaño salida de desagüe': '110',
-                }
-            }
+                'specs': [
+                    ('Área máxima de la cubierta', '500 m2'),
+                    ('Máxima Intensidad de la lluvia', '75 mm/h'),
+                    ('Tipo de filtro', 'Abierto por un extremo, con diseño antiobstrucción'),
+                    ('Principio de trabajo', 'Fuerza Cohesiva y Centrífuga'),
+                    ('Presión operacional', '30,48 cm de columna de agua (0,060 kg/cm2)'),
+                    ('Caudal máximo', '480 L/min'),
+                    ('Elemento filtrante', 'Malla de superficies múltiples en acero inoxidable SS-304 - grado alimenticio'),
+                    ('Tamaño de la malla filtrante', '250 micras (0,25 mm)'),
+                    ('Tamaño de la entrada', '110 mm'),
+                    ('Tamaño salida de agua limpia', '110 mm'),
+                    ('Tamaño salida de desagüe', '110 mm'),
+                    ('Material cuerpo del filtro', 'Polietileno de alta densidad (HDPE), estabilizado contra rayos ultravioleta (UV), resistente a la corrosión y a la intemperie.'),
+                    ('Eficiencia del filtro', 'Por encima del 90%'),
+                    ('Fuente de poder', 'Gravedad'),
+                    ('Limpieza', 'Autolimpieza mediante descarga automática'),
+                ]
+            },
         ]
-        
-        # Common specifications for all products
-        common_specs = {
-            'Máxima Intensidad de la lluvia': '75',
-            'Tipo de filtro': 'Abierto por un extremo, con diseño antiobstrucción',
-            'Principio de trabajo': 'Fuerza Cohesiva y Centrífuga',
-            'Presión operacional': '30,48 cm de columna de agua (0,060 kg/cm2)',
-            'Elemento filtrante': 'Malla de superficies múltiples en acero inoxidable SS-304 - grado alimenticio',
-            'Tamaño de la malla filtrante': '250 micras (0,25 mm)',
-            'Material cuerpo del filtro': 'Polietileno de alta densidad (HDPE), estabilizado contra rayos ultravioleta (UV), resistente a la corrosión y a la intemperie.',
-            'Eficiencia del filtro': 'Por encima del 90%',
-            'Fuente de poder': 'Gravedad',
-            'Limpieza': 'Autolimpieza mediante descarga automática',
-        }
 
         # Create products
         for product_data in products_data:
@@ -145,10 +181,8 @@ class Command(BaseCommand):
             if created:
                 self.stdout.write(f'Created product: {product.title}')
                 
-                # Create specifications for this product
-                all_specs = {**common_specs, **product_data['specs']}
-                
-                for spec_name, spec_value in all_specs.items():
+                # Crear especificaciones siguiendo el orden exacto proporcionado
+                for spec_name, spec_value in product_data['specs']:
                     if spec_name in spec_types:
                         ProductSpecification.objects.get_or_create(
                             product=product,
@@ -156,7 +190,7 @@ class Command(BaseCommand):
                             defaults={'value': spec_value}
                         )
                 
-                self.stdout.write(f'Added {len(all_specs)} specifications for {product.title}')
+                self.stdout.write(f"Added {len(product_data['specs'])} specifications for {product.title}")
             else:
                 self.stdout.write(f'Product already exists: {product.title}')
 

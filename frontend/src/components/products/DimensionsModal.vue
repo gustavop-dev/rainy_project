@@ -35,12 +35,32 @@
         </div>
 
         <div v-else class="flex justify-center">
-          <img 
-            :src="dimensionsImageUrl" 
-            :alt="`Medidas de ${productTitle}`"
-            class="max-w-full max-h-[60vh] object-contain rounded-lg shadow-sm"
-            @error="handleImageError"
-          />
+          <div class="relative overflow-hidden max-w-full max-h-[60vh]">
+            <img
+              ref="imageRef"
+              :src="dimensionsImageUrl"
+              :alt="`Medidas de ${productTitle}`"
+              class="object-contain rounded-lg shadow-sm select-none"
+              :style="imageStyle"
+              @error="handleImageError"
+              @wheel.passive.prevent="onWheel"
+              @mousedown.prevent="onMouseDown"
+              @mousemove.prevent="onMouseMove"
+              @mouseup.prevent="onMouseUp"
+              @mouseleave.prevent="onMouseUp"
+              draggable="false"
+            />
+
+            <!-- Controles de zoom -->
+            <div class="absolute right-2 bottom-2 flex flex-col bg-white/80 rounded-md shadow">
+              <button @click="zoomIn" class="p-2 hover:bg-gray-100 rounded-t-md">
+                <PlusIcon class="w-4 h-4 text-gray-700" />
+              </button>
+              <button @click="zoomOut" class="p-2 hover:bg-gray-100 rounded-b-md border-t border-gray-200">
+                <MinusIcon class="w-4 h-4 text-gray-700" />
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -51,6 +71,7 @@
 import { ref, computed, watch } from 'vue'
 import ModalTransition from '@/components/layouts/modal/ModalTransition.vue'
 import { useProductsStore } from '@/stores/productsStore'
+import { PlusIcon, MinusIcon } from '@heroicons/vue/24/solid'
 
 // Props
 const props = defineProps({
@@ -109,5 +130,68 @@ watch(() => props.isVisible, (isVisible) => {
       isLoading.value = false
     }, 300)
   }
+})
+
+// ------------------------------
+// Funcionalidad de Zoom y Pan
+// ------------------------------
+
+const scale = ref(1)
+const translateX = ref(0)
+const translateY = ref(0)
+const isDragging = ref(false)
+const lastMouseX = ref(0)
+const lastMouseY = ref(0)
+
+const imageStyle = computed(() => ({
+  transform: `translate(${translateX.value}px, ${translateY.value}px) scale(${scale.value})`,
+  cursor: isDragging.value ? 'grabbing' : 'grab',
+  transition: isDragging.value ? 'none' : 'transform 0.1s ease-out'
+}))
+
+const onWheel = (event) => {
+  const delta = event.deltaY > 0 ? -0.1 : 0.1
+  scale.value = Math.min(Math.max(scale.value + delta, 0.5), 4)
+}
+
+const onMouseDown = (event) => {
+  isDragging.value = true
+  lastMouseX.value = event.clientX
+  lastMouseY.value = event.clientY
+}
+
+const onMouseMove = (event) => {
+  if (!isDragging.value) return
+  const dx = event.clientX - lastMouseX.value
+  const dy = event.clientY - lastMouseY.value
+  translateX.value += dx
+  translateY.value += dy
+  lastMouseX.value = event.clientX
+  lastMouseY.value = event.clientY
+}
+
+const onMouseUp = () => {
+  isDragging.value = false
+}
+
+// Funciones de botones de zoom
+const zoomIn = () => {
+  scale.value = Math.min(scale.value + 0.2, 4)
+}
+
+const zoomOut = () => {
+  scale.value = Math.max(scale.value - 0.2, 0.5)
+}
+
+// Reiniciar zoom y posición cuando cambia el producto o se cierra el modal
+const resetTransform = () => {
+  scale.value = 1
+  translateX.value = 0
+  translateY.value = 0
+}
+
+watch(() => props.productId, resetTransform)
+watch(() => props.isVisible, (visible) => {
+  if (!visible) resetTransform()
 })
 </script> 

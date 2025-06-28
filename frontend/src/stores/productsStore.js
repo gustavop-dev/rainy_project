@@ -10,20 +10,22 @@
 import { ref, computed } from 'vue'
 import { get_request } from '@/stores/services/request_http'
 
+// -------------------------------------------------
+// Estado global (singleton) del store
+// -------------------------------------------------
+
+const products = ref([]) // Array de productos desde la API
+const comparisonImages = ref([]) // Imágenes de comparación
+const isLoading = ref(false) // Estado de carga
+const error = ref(null) // Almacena errores
+const isInitialized = ref(false) // Evita doble init
+
 /**
- * Products Store Composable
- * Manages product data, loading states, and provides computed getters for component consumption
- * 
- * @returns {Object} Store state, actions, and getters
+ * Products Store Composable (singleton)
+ * Todas las instancias comparten este estado gracias a que los refs se declaran fuera.
+ * @returns {Object} API del store
  */
 export const useProductsStore = () => {
-  // Reactive state
-  const products = ref([]) // Array of products from API
-  const comparisonImages = ref([]) // Array of comparison images
-  const isLoading = ref(false) // Loading state for API requests  
-  const error = ref(null) // Error message storage
-  const isInitialized = ref(false) // Flag to prevent duplicate initialization
-
   /**
    * Initializes the store by loading products if not already loaded
    * 
@@ -110,6 +112,7 @@ export const useProductsStore = () => {
   const getProductById = computed(() => {
     return (id) => {
       const product = products.value.find(p => p.id === parseInt(id))
+      console.log(product)
       return product || null
     }
   })
@@ -142,7 +145,7 @@ export const useProductsStore = () => {
 
       return product.specifications.map(spec => ({
         label: spec.name,
-        value: spec.unit ? `${spec.value} ${spec.unit}` : spec.value
+        value: spec.unit ? `${spec.value}` : spec.value
       }))
     }
   })
@@ -157,7 +160,28 @@ export const useProductsStore = () => {
   const getProductDimensionsImage = computed(() => {
     return (id) => {
       const product = getProductById.value(id)
-      return product?.dimensions_image_url || null
+      if (!product) return null
+
+      // Posibles nombres de la propiedad según backend
+      const candidates = [
+        'dimensions_image_url',
+        'dimension_image_url',
+        'dimensionsImageUrl',
+        'dimensionImageUrl',
+        'dimensions_image',
+        'dimension_image'
+      ]
+
+      for (const key of candidates) {
+        if (product[key]) return product[key]
+      }
+
+      // Si no se encuentra, log de advertencia para debug
+      if (process.env.NODE_ENV !== 'production') {
+        console.warn(`Producto id=${id} no contiene campo de imagen de dimensiones (candidatos: ${candidates.join(', ')})`, product)
+      }
+
+      return null
     }
   })
 

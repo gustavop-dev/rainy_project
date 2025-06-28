@@ -159,7 +159,7 @@ const getSpecificationValue = (product, specName) => {
   const spec = product.specifications.find(s => s.name === specName)
   if (!spec) return '-'
   
-  return spec.unit ? `${spec.value} ${spec.unit}` : spec.value
+  return spec.unit ? `${spec.value}` : spec.value
 }
 
 // Inicializar store al montar el componente

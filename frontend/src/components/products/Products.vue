@@ -36,29 +36,29 @@
           :key="product.id"
           class="max-w-sm mx-auto sm:mx-0 bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
         >
-            <!-- Imagen del producto -->
-            <div class="bg-gray-50 p-6 sm:p-8 flex items-center justify-center h-48 sm:h-56 md:h-64">
-              <img 
-                v-if="product.main_image_url"
-                :src="product.main_image_url" 
-                :alt="product.title"
-                class="w-full h-full object-contain"
-                @error="$event.target.style.display='none'"
-              />
-              <div 
-                v-else
-                class="w-24 sm:w-28 md:w-32 h-24 sm:h-28 md:h-32 bg-gray-800 rounded-lg flex items-center justify-center"
-              >
-                <div class="text-white font-regular text-xs sm:text-sm">{{ product.title.split(' ')[0] }}</div>
-              </div>
-            </div>
-
             <!-- Contenido de la tarjeta -->
             <div class="p-4 sm:p-5 md:p-6">
               <!-- Nombre del producto -->
               <h2 class="text-2xl sm:text-3xl font-regular text-gray-800 mb-3">
                 {{ product.title }}
               </h2>
+
+              <!-- Imagen del producto -->
+              <div class="bg-gray-50 p-6 sm:p-8 flex items-center justify-center h-48 sm:h-56 md:h-64">
+                <img 
+                  v-if="product.main_image_url"
+                  :src="product.main_image_url" 
+                  :alt="product.title"
+                  class="w-full h-full object-contain"
+                  @error="$event.target.style.display='none'"
+                />
+                <div 
+                  v-else
+                  class="w-24 sm:w-28 md:w-32 h-24 sm:h-28 md:h-32 bg-gray-800 rounded-lg flex items-center justify-center"
+                >
+                  <div class="text-white font-regular text-xs sm:text-sm">{{ product.title.split(' ')[0] }}</div>
+                </div>
+              </div>
 
               <!-- Especificación técnica principal -->
               <div v-if="product.specifications && product.specifications.length > 0" class="flex items-center mb-4">
@@ -72,7 +72,7 @@
               <div v-if="product.specifications && product.specifications.length > 0" class="flex items-center mb-4">
                 <div class="w-2 h-2 sm:w-3 sm:h-3 bg-blue-500 rounded-full mr-2"></div>
                 <span class="text-gray-700 font-regular text-xs sm:text-sm">
-                  {{ product.specifications[1].name }}: {{ product.specifications[1].value }}{{ product.specifications[1].unit ? ` ${product.specifications[1].unit}` : '' }}
+                  {{ product.specifications[5].name }}: {{ product.specifications[5].value }}{{ product.specifications[5].unit ? ` ${product.specifications[5].unit}` : '' }}
                 </span>
               </div>
 
@@ -195,12 +195,32 @@
         </div>
 
         <div v-else class="flex justify-center">
-          <img 
-            :src="comparisonImage.image_url" 
-            :alt="comparisonImage.name"
-            class="max-w-full max-h-[70vh] object-contain rounded-lg shadow-sm"
-            @error="handleComparisonImageError"
-          />
+          <div class="relative overflow-hidden max-w-full max-h-[70vh]">
+            <img
+              ref="comparisonImageRef"
+              :src="comparisonImage.image_url"
+              :alt="comparisonImage.name"
+              class="object-contain rounded-lg shadow-sm select-none"
+              :style="comparisonImageStyle"
+              @error="handleComparisonImageError"
+              @wheel.passive.prevent="onComparisonWheel"
+              @mousedown.prevent="onComparisonMouseDown"
+              @mousemove.prevent="onComparisonMouseMove"
+              @mouseup.prevent="onComparisonMouseUp"
+              @mouseleave.prevent="onComparisonMouseUp"
+              draggable="false"
+            />
+
+            <!-- Controles de zoom -->
+            <div class="absolute right-2 bottom-2 flex flex-col bg-white/80 rounded-md shadow">
+              <button @click="comparisonZoomIn" class="p-2 hover:bg-gray-100 rounded-t-md">
+                <PlusIcon class="w-4 h-4 text-gray-700" />
+              </button>
+              <button @click="comparisonZoomOut" class="p-2 hover:bg-gray-100 rounded-b-md border-t border-gray-200">
+                <MinusIcon class="w-4 h-4 text-gray-700" />
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -208,8 +228,8 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue'
-import { CheckBadgeIcon } from '@heroicons/vue/24/solid'
+import { ref, onMounted, computed, watch } from 'vue'
+import { CheckBadgeIcon, PlusIcon, MinusIcon } from '@heroicons/vue/24/solid'
 import SpecificationsModal from '@/components/products/SpecificationsModal.vue'
 import ComparisonModal from '@/components/products/ComparisonModal.vue'
 import DimensionsModal from '@/components/products/DimensionsModal.vue'
@@ -291,5 +311,68 @@ const closeDimensionsComparisonModal = () => {
 
 const handleComparisonImageError = () => {
   comparisonImage.value = null
+}
+
+// ------------------------------
+// Zoom y Pan para imagen de comparación
+// ------------------------------
+
+const comparisonScale = ref(1)
+const comparisonTranslateX = ref(0)
+const comparisonTranslateY = ref(0)
+const comparisonIsDragging = ref(false)
+const comparisonLastMouseX = ref(0)
+const comparisonLastMouseY = ref(0)
+
+const comparisonImageStyle = computed(() => ({
+  transform: `translate(${comparisonTranslateX.value}px, ${comparisonTranslateY.value}px) scale(${comparisonScale.value})`,
+  cursor: comparisonIsDragging.value ? 'grabbing' : 'grab',
+  transition: comparisonIsDragging.value ? 'none' : 'transform 0.1s ease-out'
+}))
+
+const onComparisonWheel = (event) => {
+  const delta = event.deltaY > 0 ? -0.1 : 0.1
+  comparisonScale.value = Math.min(Math.max(comparisonScale.value + delta, 0.5), 4)
+}
+
+const onComparisonMouseDown = (event) => {
+  comparisonIsDragging.value = true
+  comparisonLastMouseX.value = event.clientX
+  comparisonLastMouseY.value = event.clientY
+}
+
+const onComparisonMouseMove = (event) => {
+  if (!comparisonIsDragging.value) return
+  const dx = event.clientX - comparisonLastMouseX.value
+  const dy = event.clientY - comparisonLastMouseY.value
+  comparisonTranslateX.value += dx
+  comparisonTranslateY.value += dy
+  comparisonLastMouseX.value = event.clientX
+  comparisonLastMouseY.value = event.clientY
+}
+
+const onComparisonMouseUp = () => {
+  comparisonIsDragging.value = false
+}
+
+const resetComparisonTransform = () => {
+  comparisonScale.value = 1
+  comparisonTranslateX.value = 0
+  comparisonTranslateY.value = 0
+}
+
+watch(() => showDimensionsComparisonModal.value, (visible) => {
+  if (!visible) resetComparisonTransform();
+});
+
+watch(() => comparisonImage.value, resetComparisonTransform);
+
+// Funciones de botones de zoom
+const comparisonZoomIn = () => {
+  comparisonScale.value = Math.min(comparisonScale.value + 0.2, 4)
+}
+
+const comparisonZoomOut = () => {
+  comparisonScale.value = Math.max(comparisonScale.value - 0.2, 0.5)
 }
 </script>

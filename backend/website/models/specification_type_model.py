@@ -28,7 +28,7 @@ class SpecificationType(models.Model):
     class Meta:
         verbose_name = "Tipo de Especificación de Producto"
         verbose_name_plural = "Tipos de Especificaciones de Producto"
-        ordering = ['name']
+        ordering = ['id']
 
     def __str__(self):
         if self.unit:

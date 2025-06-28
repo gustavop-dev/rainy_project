@@ -16,7 +16,7 @@
         Características generales de los filtros <span class="whitespace-nowrap">RAINY FL</span>
       </h2>
       <p class="text-lg font-regular mb-4 px-10">
-        Todos los modelos Rainy FL comparten un diseño eficiente, duradero y libre de mantenimiento. Están pensados para facilitar la recolección de agua lluvia sin complicaciones técnicas, repuestos ni energía eléctrica.
+        Todos los modelos Rainy FL comparten un diseño eficiente, duradero y libre de mantenimiento. Están pensados para facilitar la filtración de agua lluvia sin complicaciones técnicas, repuestos ni energía eléctrica.
       </p>
       <p class="text-lg font-regular mb-12 px-10">
         Instala, filtra y reutiliza, así de simple.
@@ -92,7 +92,7 @@ const features = [
   { 
     icon: LockClosedIcon, 
     title: 'Cero costos de mantenimiento', 
-    description: 'No requiere combustibles ni repuestos. Una solución de largo plazo, sin gastos recurrentes.' 
+    description: 'No requiere consumibles ni repuestos. Una solución de largo plazo, sin gastos recurrentes.' 
   },
   { 
     icon: LightBulbIcon, 
