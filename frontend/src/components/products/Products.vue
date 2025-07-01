@@ -3,7 +3,7 @@
     <div class="px-4 sm:px-6 md:px-8 lg:px-10 mx-auto">
       <!-- Encabezado de la sección - Responsive -->
       <div class="text-left grid grid-cols-1 lg:grid-cols-2 items-start lg:items-end gap-6 lg:gap-8 mb-8 sm:mb-10 md:mb-12">
-        <h1 class="text2xl sm:text-3xl md:text-4xl lg:text-5xl font-light mb-4 lg:mb-4">
+        <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light mb-4 lg:mb-4">
           Filtros para agua lluvia Rainy: <span class="underline decoration-2 md:decoration-3 underline-offset-4">eficientes, duraderos y sin complicaciones</span>
         </h1>
         <p class="text-base sm:text-lg font-regular leading-relaxed">
