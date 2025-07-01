@@ -32,7 +32,7 @@
                   v-for="product in sortedProducts" 
                   :key="product.id"
                   scope="col" 
-                  class="px-3 sm:px-4 md:px-6 py-3 sm:py-4 text-center text-xs font-medium text-gray-500 uppercase tracking-wider min-w-[160px] sm:min-w-[180px] md:min-w-[200px]"
+                  class="px-2 sm:px-3 md:px-4 py-3 sm:py-4 text-center text-xs font-medium text-gray-500 uppercase tracking-wider min-w-[130px] sm:min-w-[150px] md:min-w-[170px]"
                 >
                   <div class="flex flex-col items-center space-y-2">
                     <!-- Imagen del producto - Responsive -->

@@ -30,7 +30,7 @@
       </div>
 
       <!-- Grid de productos - Responsive -->
-      <div v-else class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-5 md:gap-6">
+      <div v-else class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 md:gap-6">
         <div 
           v-for="product in displayProducts" 
           :key="product.id"
@@ -44,7 +44,7 @@
               </h2>
 
               <!-- Imagen del producto -->
-              <div class="bg-gray-50 p-6 sm:p-8 flex items-center justify-center h-48 sm:h-56 md:h-64">
+              <div class="bg-gray-50 flex items-center justify-center">
                 <img 
                   v-if="product.main_image_url"
                   :src="product.main_image_url" 
@@ -78,11 +78,11 @@
 
               <!-- Precio -->
               <div class="flex items-center justify-between mb-4">
-                <span class="text-xl sm:text-2xl font-regular text-gray-800">
-                  $ {{ parseFloat(product.price).toLocaleString('es-CO') }} COP
-                </span>
-                <div class="w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center">
-                  <CheckBadgeIcon class="text-black size-6 sm:size-8"></CheckBadgeIcon>
+                <div class="whitespace-nowrap leading-tight">
+                  <span class="text-lg sm:text-xl lg:text-xl xl:text-2xl font-regular text-gray-800">
+                    $ {{ parseFloat(product.price).toLocaleString('es-CO') }}
+                  </span>
+                  <span class="text-xs text-gray-600 block sm:inline sm:ml-1">COP</span>
                 </div>
               </div>
 

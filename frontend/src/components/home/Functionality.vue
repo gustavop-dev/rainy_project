@@ -13,7 +13,7 @@
       <!-- Main section title -->
       <div class="text-center mb-16">
         <h2 class="text-4xl lg:text-5xl font-light text-black">
-          ¿Cómo funcionan nuestro filtros de agua lluvia?
+          ¿Cómo funcionan nuestros filtros de agua lluvia?
         </h2>
         <p class="text-xl font-regular text-gray-600 mt-4 italic">
           Filtra hojas, tierra y residuos en segundos. Sin electricidad, sin complicaciones.
