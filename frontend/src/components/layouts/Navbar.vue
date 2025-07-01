@@ -10,7 +10,7 @@
 <template>
   <!-- Fixed navigation bar with backdrop blur -->
   <nav 
-    class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 transition-all duration-300 ease-in-out"
+    class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 pt-3 transition-all duration-300 ease-in-out"
     :class="{ 
       'bg-zinc-800/40 backdrop-blur-md': isScrolled,
       'bg-transparent': !isScrolled 

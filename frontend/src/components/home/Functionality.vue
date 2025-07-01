@@ -27,8 +27,7 @@
           <img 
             src="@/assets/layouts/images/filterCrossSectionImage.jpg" 
             alt="Corte transversal del filtro de agua de lluvia mostrando el proceso de filtración"
-            class="w-full h-auto rounded-xl shadow-lg"
-          />
+            class="w-full h-auto rounded-xl"
         </div>
 
         <!-- Process explanations -->
@@ -62,27 +61,18 @@
               La suciedad es expulsada automáticamente por la salida inferior, sin intervención manual.
             </p>
           </div>
-
-          <!-- Additional explanation -->
-          <div class="pt-6 border-t border-gray-200">
-            <p class="text-lg font-regular text-gray-700 leading-relaxed mb-4">
-              Todo el sistema funciona por gravedad, sin necesidad de electricidad, y evita que la carga orgánica llegue al agua almacenada.
-            </p>
-            <p class="text-lg font-regular text-gray-700 leading-relaxed mb-4">
-              Esto previene malos olores, descomposición y cambios de color.
-            </p>
-            <p class="text-lg font-regular text-gray-700 leading-relaxed">
-              El resultado es agua limpia, lista para <strong>usos no potables</strong> como riego, lavado, almacenamiento o sanitarios.
-            </p>
-          </div>
-
         </div>
       </div>
-
+      <!-- Additional explanation -->
+      <div class="pt-6">
+        <p class="text-lg font-regular text-gray-700 leading-relaxed mb-4">
+          Todo el sistema funciona por gravedad, sin necesidad de electricidad, y evita que la carga orgánica llegue al agua almacenada. Esto previene malos olores, descomposición y cambios de color. El resultado es agua limpia, lista para <strong>usos no potables**</strong> como riego, lavado, almacenamiento o sanitarios.
+        </p>
+      </div>
       <!-- Texto informativo - Responsive -->
-      <div class="mt-6 sm:mt-8 text-left">
+      <div class="mt-6 sm:mt-4 text-left">
         <p class="text-xs sm:text-sm font-regular text-gray-500 leading-relaxed">
-          *El agua lluvia filtrada no es apta para consumo humano directo. Si deseas potabilizar el agua lluvia, también contamos con sistemas complementarios para ese fin.
+          **El agua lluvia filtrada no es apta para consumo humano directo. Si deseas potabilizar el agua lluvia, también contamos con sistemas complementarios para ese fin.
         </p>
       </div>
     </div>

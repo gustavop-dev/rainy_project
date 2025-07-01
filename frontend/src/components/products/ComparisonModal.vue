@@ -135,19 +135,18 @@ const sortedProducts = computed(() => {
   return [...activeProducts.value].sort((a, b) => a.order - b.order)
 })
 
-// Obtener todos los nombres de especificaciones únicos
+// Obtener los nombres de especificaciones en el mismo orden que aparecen en el primer producto
 const allSpecificationNames = computed(() => {
-  const specNames = new Set()
-  
-  sortedProducts.value.forEach(product => {
-    if (product.specifications && Array.isArray(product.specifications)) {
-      product.specifications.forEach(spec => {
-        specNames.add(spec.name)
-      })
-    }
-  })
-  
-  return Array.from(specNames).sort()
+  if (!sortedProducts.value.length) return []
+
+  const firstProduct = sortedProducts.value[0]
+
+  if (!firstProduct.specifications || !Array.isArray(firstProduct.specifications)) {
+    return []
+  }
+
+  // Se asume que todos los productos comparten el mismo orden de especificaciones
+  return firstProduct.specifications.map(spec => spec.name)
 })
 
 // Función para obtener el valor de una especificación para un producto específico

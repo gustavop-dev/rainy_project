@@ -40,7 +40,7 @@
               ref="imageRef"
               :src="dimensionsImageUrl"
               :alt="`Medidas de ${productTitle}`"
-              class="object-contain rounded-lg shadow-sm select-none"
+              class="object-contain rounded-lg shadow-sm select-none max-h-[60vh]"
               :style="imageStyle"
               @error="handleImageError"
               @wheel.passive.prevent="onWheel"

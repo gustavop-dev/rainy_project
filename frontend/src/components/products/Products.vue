@@ -3,7 +3,7 @@
     <div class="px-4 sm:px-6 md:px-8 lg:px-10 mx-auto">
       <!-- Encabezado de la sección - Responsive -->
       <div class="text-left grid grid-cols-1 lg:grid-cols-2 items-start lg:items-end gap-6 lg:gap-8 mb-8 sm:mb-10 md:mb-12">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-4 lg:mb-4">
+        <h1 class="text2xl sm:text-3xl md:text-4xl lg:text-5xl font-light mb-4 lg:mb-4">
           Filtros para agua lluvia Rainy: <span class="underline decoration-2 md:decoration-3 underline-offset-4">eficientes, duraderos y sin complicaciones</span>
         </h1>
         <p class="text-base sm:text-lg font-regular leading-relaxed">
@@ -39,7 +39,7 @@
             <!-- Contenido de la tarjeta -->
             <div class="p-4 sm:p-5 md:p-6">
               <!-- Nombre del producto -->
-              <h2 class="text-2xl sm:text-3xl font-regular text-gray-800 mb-3">
+              <h2 class="text-2xl sm:text-3xl font-regular text-center text-gray-800 mb-3">
                 {{ product.title }}
               </h2>
 
@@ -80,7 +80,7 @@
               <div class="flex items-center justify-between mb-4">
                 <div class="whitespace-nowrap leading-tight">
                   <span class="text-lg sm:text-xl lg:text-xl xl:text-2xl font-regular text-gray-800">
-                    $ {{ parseFloat(product.price).toLocaleString('es-CO') }}
+                    $ {{ parseFloat(product.price).toLocaleString('es-CO') }}*
                   </span>
                   <span class="text-xs text-gray-600 block sm:inline sm:ml-1">COP</span>
                 </div>
@@ -200,7 +200,7 @@
               ref="comparisonImageRef"
               :src="comparisonImage.image_url"
               :alt="comparisonImage.name"
-              class="object-contain rounded-lg shadow-sm select-none"
+              class="object-contain rounded-lg shadow-sm select-none max-h-[70vh]"
               :style="comparisonImageStyle"
               @error="handleComparisonImageError"
               @wheel.passive.prevent="onComparisonWheel"
