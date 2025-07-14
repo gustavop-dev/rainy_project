@@ -122,3 +122,15 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Email configuration
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'info@rainy.com.co'
+EMAIL_HOST_PASSWORD = 'awby fmez bskg lecc'
+DEFAULT_FROM_EMAIL = 'info@rainy.com.co'
+
+# Email settings for notifications
+CONTACT_EMAIL_RECIPIENT = 'info@rainy.com.co'
