@@ -13,8 +13,7 @@
   
   <!-- Floating WhatsApp button with neon glow -->
   <a
-    v-if="!loading && !showPreloader"
-    href="https://wa.me/573238122373"
+    href="https://wa.me/573115445417"
     target="_blank"
     rel="noopener noreferrer"
     class="fixed z-50 bottom-4 right-4 w-12 h-12 rounded-full bg-green-500 
@@ -63,11 +62,5 @@
  * App Component Script
  * Manages global application state and floating UI elements
  */
-
-import { ref } from "vue"
 import { RouterView } from "vue-router"
-
-// State variables
-const loading = ref(false)
-const showPreloader = ref(false)
 </script>
