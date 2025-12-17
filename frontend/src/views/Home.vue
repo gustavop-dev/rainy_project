@@ -11,21 +11,6 @@
     <!-- Navigation bar - fixed at top -->
     <Navbar />
     
-    <!-- Hero section - main banner/introduction -->
-    <Hero />
-    
-    <!-- Products showcase section -->
-    <Products />
-    
-    <!-- Product characteristics section -->
-    <Characteristics />
-    
-    <!-- Contact form section -->
-    <ContactForm />
-    
-    <!-- Product functionality section -->
-    <Functionality />
-    
     <!-- Contact banner/CTA section -->
     <ContactBanner />
     

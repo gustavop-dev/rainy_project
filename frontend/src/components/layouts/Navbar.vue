@@ -16,14 +16,8 @@
       'bg-transparent': !isScrolled 
     }"
   >
-    <!-- Logo section -->
-    <div class="flex items-center">
-      <img 
-        src="@/assets/logo/Rainy_Filter_Logo.webp" 
-        alt="Rainy Logo" 
-        class="h-16 mr-2" 
-      />
-    </div>
+    <!-- Logo section (oculto, se dejó vacío para mantener estructura) -->
+    <div class="flex items-center"></div>
     
     <!-- Contact button with modal trigger -->
     <button 

@@ -1,8 +1,11 @@
 <template>
-  <section class="bg-gray-50 py-16 px-8">
+  <section class="bg-gray-50 pt-16 pb-32 px-8">
     <div class="mx-auto">
       <!-- Título centrado -->
       <div class="text-center mb-16">
+        <p class="text-2xl lg:text-3xl font-normal tracking-wide text-gray-500 uppercase mb-4">
+          Filtros de agua en Colombia
+        </p>
         <h2 class="text-4xl lg:text-5xl font-light text-black leading-tight">
           ¿Listo para mejorar tu sistema de agua?
         </h2>
