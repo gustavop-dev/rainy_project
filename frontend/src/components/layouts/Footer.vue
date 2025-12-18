@@ -21,8 +21,8 @@
           
           <!-- Columna izquierda - Logo y descripción -->
           <div class="lg:col-span-2">
-            <h1 class="text-6xl lg:text-7xl font-light text-white mb-6">
-              Rainy
+            <h1 class="text-3xl lg:text-4xl font-light text-white mb-6">
+              FILTROS <span class="text-blue-600">AGUA LLUVIA</span> CO.
             </h1>
             <p class="text-xl lg:text-2xl font-regular text-white max-w-2xl">
               Soluciones para filtrar y aprovechar el agua lluvia <br>de forma eficiente.
@@ -62,12 +62,6 @@
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                 </svg>
               </a>
-              <a 
-                href="mailto:info@rainy.com.co" 
-                class="block font-regular text-lg hover:text-gray-200 transition-colors duration-200 lg:text-right"
-              >
-                info@rainy.com.co
-              </a>
             </div>
           </div>
         </div>
@@ -87,7 +81,7 @@
             </button>
           </div>
           <div>
-            <span class="font-regular">© 2025 Rainy. Todos los derechos reservados.</span>
+            <span class="font-regular"></span>
           </div>
         </div>
       </div>

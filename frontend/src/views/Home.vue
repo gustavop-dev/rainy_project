@@ -8,6 +8,7 @@
 -->
 
 <template>
+  <div class="min-h-screen flex flex-col">
     <!-- Navigation bar - fixed at top -->
     <Navbar />
     
@@ -15,7 +16,8 @@
     <ContactBanner />
     
     <!-- Site footer -->
-    <Footer />
+    <Footer class="mt-auto" />
+  </div>
 </template>
 
 <script setup>

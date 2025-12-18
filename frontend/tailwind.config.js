@@ -18,6 +18,7 @@ export default {
         // Custom font families
         fontFamily: {
           ubuntu: ['Ubuntu', 'sans-serif'], // Ubuntu font with fallback
+          bebas: ['Bebas Neue', 'sans-serif'], // Bebas Neue font with fallback
         },
       },
       colors: {

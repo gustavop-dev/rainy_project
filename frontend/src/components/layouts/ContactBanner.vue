@@ -3,10 +3,10 @@
     <div class="mx-auto">
       <!-- Título centrado -->
       <div class="text-center mb-16">
-        <p class="text-2xl lg:text-3xl font-normal tracking-wide text-gray-500 uppercase mb-4">
-          Filtros de agua en Colombia
+        <p class="text-4xl lg:text-5xl font-normal tracking-wide text-gray-500 uppercase mb-4">
+          FILTROS DE <span class="text-blue-600">AGUA LLUVIA</span> PARA COLOMBIA
         </p>
-        <h2 class="text-4xl lg:text-5xl font-light text-black leading-tight">
+        <h2 class="text-2xl lg:text-3xl font-light text-black leading-tight">
           ¿Listo para mejorar tu sistema de agua?
         </h2>
       </div>
@@ -21,10 +21,6 @@
           <p class="text-gray-600 font-regular mb-4 leading-relaxed">
             Cuéntanos qué necesitas y te ayudaremos a elegir el filtro adecuado para tu propiedad.
           </p>
-          <a href="mailto:info@rainy.com.co" class="text-black font-regular hover:text-blue-600 transition-colors duration-200 flex items-center space-x-2">
-            <EnvelopeIcon class="w-5 h-5 text-black" />
-            <span>info@rainy.com.co</span>
-          </a>
         </div>
 
         <!-- Bloque 2: Asesoría personalizada -->
@@ -60,7 +56,7 @@
             4. ¿Necesitas agua potable?
           </h3>
           <p class="text-gray-600 font-regular mb-4 leading-relaxed">
-            Además del sistema Rainy para el filtrado de agua lluvia, también ofrecemos soluciones para potabilizarla y hacerla segura para el consumo humano.
+            Además del sistema para el filtrado de agua lluvia, también ofrecemos soluciones para potabilizarla y hacerla segura para el consumo humano.
           </p>
           <p class="text-gray-600 font-regular">
             Pregúntanos por nuestros sistemas de potabilización.
